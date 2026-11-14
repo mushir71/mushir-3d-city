@@ -296,6 +296,39 @@ textarea{min-height:90px;resize:vertical}
   .backdrop{background:rgba(10,20,20,.12)}
 }
 @media (prefers-reduced-motion:reduce){.cue i::after,.chip3d::before,.loader div{animation:none}}
+
+/* ===== Claymorphism: puffy, soft, tappable ===== */
+:root{--clay-in:inset 6px 7px 10px rgba(255,255,255,.6),inset -6px -9px 14px rgba(0,0,0,.16)}
+.mapbtn,.smpbtn,.svcbtn,.docbtn{border:0;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s,box-shadow .15s}
+.mapbtn{background:linear-gradient(160deg,#7aa7ff,#4a73e8)!important;box-shadow:var(--clay-in),0 12px 20px rgba(74,115,232,.45)!important}
+.svcbtn{background:linear-gradient(160deg,#5fe0c0,#22b08f)!important;box-shadow:var(--clay-in),0 12px 20px rgba(34,176,143,.45)!important}
+.smpbtn{background:linear-gradient(160deg,#ffb27a,#ff7f3f)!important;color:#fff!important;box-shadow:var(--clay-in),0 12px 20px rgba(255,127,63,.5)!important}
+.smpbtn svg{stroke:#fff!important}
+.docbtn{background:linear-gradient(160deg,#ff9ec7,#ec5d9b)!important;box-shadow:var(--clay-in),0 12px 20px rgba(236,93,155,.45)!important}
+.mapbtn svg,.svcbtn svg{stroke:#fff}
+.mapbtn:active,.smpbtn:active,.svcbtn:active,.docbtn:active{transform:scale(.93) translateY(2px)!important;box-shadow:inset 5px 6px 10px rgba(0,0,0,.18),0 4px 8px rgba(0,0,0,.18)!important}
+.svcbtn:active{transform:scale(.93) translateY(2px)!important}
+.sheet{background:linear-gradient(180deg,#e3eeff,#f1f6ff 55%,#fff)!important;border-radius:38px 38px 0 0!important;box-shadow:0 -14px 40px rgba(60,100,200,.3),inset 0 6px 10px rgba(255,255,255,.9)!important}
+.sheet::before{content:"";position:absolute;right:62px;top:-26px;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#ffc0dc,#f06aa8 70%);box-shadow:inset -4px -6px 10px rgba(0,0,0,.18),inset 4px 5px 8px rgba(255,255,255,.6),0 8px 14px rgba(240,106,168,.4);animation:clayfloat 3.4s ease-in-out infinite;pointer-events:none}
+.sheet::after{content:"";position:absolute;left:18px;top:-18px;width:38px;height:38px;border-radius:50%;background:radial-gradient(circle,transparent 0 9px,#6fe3b6 10px);box-shadow:inset -3px -5px 8px rgba(0,0,0,.16),inset 3px 4px 7px rgba(255,255,255,.55),0 8px 12px rgba(60,200,150,.4);animation:clayfloat 4s ease-in-out -1.2s infinite;pointer-events:none}
+@keyframes clayfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.sheet-head h2{color:#1d2f6b}
+.x{background:linear-gradient(160deg,#fff,#dfe8fb)!important;box-shadow:inset 3px 3px 6px #fff,inset -3px -4px 7px rgba(0,0,0,.12),0 5px 10px rgba(60,100,200,.25)}
+.x:active{transform:scale(.9)}
+.btn{background:linear-gradient(160deg,#ffb27a,#ff7f3f)!important;color:#fff!important;border-radius:26px!important;min-height:52px;text-shadow:0 1px 2px rgba(0,0,0,.2);box-shadow:var(--clay-in),0 10px 16px rgba(255,127,63,.4)!important;transition:transform .15s,box-shadow .15s}
+.btn.ghost{background:linear-gradient(160deg,#fff,#dde7fb)!important;color:#27407f!important;text-shadow:none;box-shadow:inset 4px 5px 8px #fff,inset -4px -6px 10px rgba(0,0,0,.1),0 8px 14px rgba(60,100,200,.2)!important}
+.btn:active{transform:scale(.95) translateY(2px)}
+.proj,.menu,.mrow,.about{border:0!important;border-radius:30px!important}
+.proj{background:linear-gradient(160deg,#ffffff,#eaf1ff)!important;box-shadow:inset 6px 7px 12px #fff,inset -6px -8px 14px rgba(70,110,200,.12),0 14px 24px rgba(70,110,200,.22)!important}
+.menu{background:linear-gradient(160deg,#7db0ff,#4c7de6)!important;box-shadow:var(--clay-in),0 16px 26px rgba(76,125,230,.4)!important}
+.mrow{box-shadow:var(--clay-in),0 8px 14px rgba(0,0,0,.2)!important;border-radius:24px!important}
+.mrow:active{transform:scale(.96)!important}
+.menu .mall{background:linear-gradient(160deg,#fff,#e4ecff)!important;color:#27407f!important;box-shadow:inset 4px 5px 8px #fff,inset -4px -6px 10px rgba(0,0,0,.1),0 8px 14px rgba(0,0,0,.18)!important;text-shadow:none}
+.projart{border-radius:24px!important;box-shadow:inset 4px 5px 10px rgba(255,255,255,.5),inset -5px -7px 12px rgba(0,0,0,.18),0 10px 18px rgba(0,0,0,.2)!important}
+.pin{box-shadow:inset 5px 6px 9px rgba(255,255,255,.6),inset -5px -7px 11px rgba(0,0,0,.2),0 9px 14px rgba(0,0,0,.22)!important}
+.mapbox{border:0!important;border-radius:28px!important;box-shadow:inset 0 0 0 6px #fff,0 10px 20px rgba(70,110,200,.2)}
+.fine,.lead{color:#4b5f8f}
+.sheet:not(.on)::before,.sheet:not(.on)::after{display:none}
 </style>
 </head>
 <body>
